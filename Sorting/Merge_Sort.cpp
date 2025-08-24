@@ -5,7 +5,7 @@ using namespace std;
 
 class Merge_Sort{
     public:
-    void ms(vector<int> &arr, int low, int high)
+    void ms(vector<int> arr, int low, int high)
     {
         if(low>=high)
             return ;
