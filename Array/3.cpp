@@ -33,6 +33,7 @@ int main()
     if(result)
         cout<<"Array is sorted";
     else
-        cout<<"Array is not sorted";
+        cout<<"Array not sorted";
     
 }
+
