@@ -7,38 +7,43 @@ using namespace std;
 class Slar{
     public:
     int second_largest(vector<int> &x)
+{
+    int largest = x[0];
+    int sec = INT_MIN;
+
+    for(int i = 1; i < x.size(); i++)
     {
-        int largest = INT_MIN;
-        int sec = INT_MIN;
-        for(int i = 1; i<x.size();i++)
+        if(x[i] > largest)
         {
-            if(x[i]>largest)
-            {
-                sec = largest;
-                largest = x[i];
-            }else if(x[i]>sec && x[i]!= largest){
-                sec = x[i];
-            }
+            sec = largest;
+            largest = x[i];
         }
-        return sec;
+        else if(x[i] > sec && x[i] != largest)
+        {
+            sec = x[i];
+        }
     }
+    return sec;
+}
     int second_smol(vector<int> &y)
+{
+    int smol = INT_MAX;
+    int sec_smol = INT_MAX;
+
+    for(int i = 0; i < y.size(); i++)
     {
-        int smol = INT_MAX;
-        int sec_smol = INT_MAX;
-        for(int i = 1;i<y.size();i++)
+        if(y[i] < smol)
         {
-            if(y[i]<smol)
-            {
-                sec_smol = smol;
-                smol = y[i];
-            }else if(y[i]< sec_smol && y[i] != smol)
-            {
-                sec_smol = y[i];
-            }
+            sec_smol = smol;
+            smol = y[i];
         }
-        return sec_smol;
+        else if(y[i] < sec_smol && y[i] != smol)
+        {
+            sec_smol = y[i];
+        }
     }
+    return sec_smol;
+}
 };
 int main()
 {
